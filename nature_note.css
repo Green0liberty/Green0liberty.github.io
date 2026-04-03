@@ -1,0 +1,274 @@
+/* 左侧标注整体容器 */
+.nature-note-container {
+    position: absolute;
+    top: 300px;
+    left: 100px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+/* 基础样式 */
+.note-item {
+    cursor: pointer; /* 鼠标变手型（必须加，提示可点击） */
+    font-size: 20px;
+    color: #ffffff; /* 默认文字颜色 */
+    transition: all 0.3s ease; /* 平滑过渡 */
+    /* 保持原有布局，不抖动 */
+    display: inline-block;
+}
+
+/* 🔴 鼠标悬浮：三合一效果 */
+.note-item:hover {
+    color: #959c85; /* 悬浮变色（绿色，可改） */
+    transform: scale(1.08); /* 悬浮放大（1.08倍，轻微不突兀） */
+    animation: flashOnce 0.6s ease 1; /* 闪烁动画：只执行1次 */
+}
+
+/* ✨ 定义「闪烁一次」动画 */
+@keyframes flashOnce {
+    0% { opacity: 1; }   /* 初始正常 */
+    50% { opacity: 0.4; }/* 中间半透明（闪烁） */
+    100% { opacity: 1; } /* 恢复正常 */
+}
+
+.temp-chart-container {
+    position: absolute;
+    top: 600px;  /* 距离底部60px，不挡比例尺 */
+    right: 340px;  /* 距离右侧220px，给图例留位置 */
+    width: 350px;  /* 缩小宽度，适配右下角 */
+    height: 120px; /* 缩小高度，不挡内容 */
+    z-index: 1;    /* 层级低于交互元素，高于地形背景 */
+    font-family: "Microsoft Yahei", sans-serif;
+    background: rgba(0, 0, 0, 0.6); /* 60%透明度黑色 */
+    border-radius: 12px; /* 圆角大小 */
+    padding-top: 15px; /* 内边距，让图表不贴边 */
+    padding-bottom:70px;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* 轻微阴影，更有浮窗质感 */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    /* 入场前轻微下沉缩小，更自然 */
+    transform: translateY(8px) scale(0.96);
+    /* 定义过渡动画 */
+    transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s;
+}
+
+.chart-title {
+    text-align: center;
+    color: #f0f0e6; /* 米白色，融合地形 */
+    font-size: 14px; /* 缩小标题 */
+    font-weight: bold;
+    margin: 0 0 2px 0;
+}
+
+.chart-subtitle {
+    text-align: center;
+    color: #d0d0c8; /* 浅灰，不突兀 */
+    font-size: 10px;
+    margin: 0 0 4px 0;
+}
+
+#temperatureChart {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.temp-chart-container.show {
+    /* 👇 激活后恢复正常 */
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transform: translateY(0) scale(1);
+}
+
+/* 图表标签页样式 */
+.chart-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.tab-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 6px;
+    padding: 4px 10px;
+    color: #f0f0e6;
+    font-size: 11px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: "Microsoft Yahei", sans-serif;
+}
+
+.tab-btn:hover {
+    background: rgba(255, 154, 60, 0.3);
+}
+
+.tab-btn.active {
+    background: #ff9a3c;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* 图表包裹层，用于切换显示 */
+.chart-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.chart-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
+.Qingling-note {
+    width: 30px;    /* 宽度 */
+    height: auto;    /* 高度自适应 */
+    position: fixed; /* 固定在页面 */
+    top: 20px;
+    left: 670px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* 轻微阴影，更有浮窗质感 */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    /* 入场前轻微下沉缩小，更自然 */
+    transform: translateY(8px) scale(0.96);
+    /* 定义过渡动画 */
+    transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s;
+}
+.Qingling-note.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transform: translateY(0) scale(1);
+}
+.Daba-note {
+    width: 30px;    /* 宽度 */
+    height: auto;    /* 高度自适应 */
+    position: fixed; /* 固定在页面 */
+    top: 90px;
+    left: 770px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* 轻微阴影，更有浮窗质感 */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    /* 入场前轻微下沉缩小，更自然 */
+    transform: translateY(8px) scale(0.96);
+    /* 定义过渡动画 */
+    transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s;
+}
+.Daba-note.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transform: translateY(0) scale(1);
+}
+.Cold {
+    width: 120px;    /* 宽度 */
+    height: auto;    /* 高度自适应 */
+    position: fixed; /* 固定在页面 */
+    top: 90px;
+    right: 600px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    /* 入场前轻微下沉缩小，更自然 */
+    transform: translateY(8px) scale(0.96);
+    /* 定义过渡动画 */
+    transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s;
+}
+.Cold.show {
+    opacity: 0.8;
+    visibility: visible;
+    pointer-events: all;
+    transform: translateY(0) scale(1);
+}
+.Cold-note {
+    width: 170px;    /* 宽度 */
+    height: auto;    /* 高度自适应 */
+    position: fixed; /* 固定在页面 */
+    bottom: 175px;
+    right: 127px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    /* 入场前轻微下沉缩小，更自然 */
+    transform: translateY(8px) scale(0.96);
+    /* 定义过渡动画 */
+    transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s;
+}
+.Cold-note.show {
+    opacity: 0.8;
+    visibility: visible;
+    pointer-events: all;
+    transform: translateY(0) scale(1);
+}
+.City-note {
+    width: 170px;    /* 宽度 */
+    height: auto;    /* 高度自适应 */
+    position: fixed; /* 固定在页面 */
+    bottom: 142px;
+    right: 127px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    /* 入场前轻微下沉缩小，更自然 */
+    transform: translateY(8px) scale(0.96);
+    /* 定义过渡动画 */
+    transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s;
+}
+.City-note.show {
+    opacity: 0.8;
+    visibility: visible;
+    pointer-events: all;
+    transform: translateY(0) scale(1);
+}
+
+.Moun-note {
+    width: 170px;    /* 宽度 */
+    height: auto;    /* 高度自适应 */
+    position: fixed; /* 固定在页面 */
+    bottom: 105px;
+    right: 127px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    /* 入场前轻微下沉缩小，更自然 */
+    transform: translateY(8px) scale(0.96);
+    /* 定义过渡动画 */
+    transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s;
+}
+.Moun-note.show {
+    opacity: 0.8;
+    visibility: visible;
+    pointer-events: all;
+    transform: translateY(0) scale(1);
+}
+
+.Chongqing {
+    width: 60px;    /* 宽度 */
+    height: auto;    /* 高度自适应 */
+    position: fixed; /* 固定在页面 */
+    bottom: 340px;
+    left: 490px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    /* 入场前轻微下沉缩小，更自然 */
+    transform: translateY(8px) scale(0.96);
+    /* 定义过渡动画 */
+    transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s;
+}
+.Chongqing.show {
+    opacity: 0.8;
+    visibility: visible;
+    pointer-events: all;
+    transform: translateY(0) scale(1);
+}
