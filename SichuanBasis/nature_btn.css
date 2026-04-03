@@ -1,0 +1,61 @@
+/* 按钮样式（你原来的） */
+.text-btn-group {
+    /* 整体定位 */
+    position: fixed;
+    top: 120px;    /* 整体上下位置 */
+    right: 450px;   /* 整体左右位置 */
+
+    /* 让文字和按钮横向并排 */
+    display: flex;
+    /* 垂直居中对齐 */
+    /* 文字和按钮之间的距离 */
+    gap: 8px;
+    opacity: 0.75;
+}
+.nature_icon-btn {
+
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0; /* 去掉多余内边距 */
+    margin-top: -0px;
+    transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.nature_icon-btn svg {
+    width: 45px;
+    height: 45px;
+    fill: white;
+    transition: transform 0.4s ease;
+}
+.nature_icon-btn:not(.active):hover svg {
+    fill: #e6e6e6;
+    transform: rotate(15deg);
+}
+.nature_icon-btn.active:hover svg {
+    fill: #e6e6e6;
+    transform: rotate(-15deg);
+}
+
+/* 优化：点击后取消默认高亮框 */
+.nature_icon-btn:focus {
+    outline: none;
+}
+/* 文字样式 */
+.nature-text {
+    font-size: 27px;
+    font-weight: 600;
+    color: white;
+    margin: 0;
+}
+/* 按钮旋转75度 */
+.nature_icon-btn.active {
+    transform: rotate(90deg);
+    transition: transform 0.4s ease;
+}
+
+/* SVG图标 */
+.nature_icon-btn svg {
+    width: 45px;
+    height: 45px;
+    fill: white;
+}

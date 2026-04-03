@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_图层_2" data-name="图层 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 236.79">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        stroke-width: .75px;
+      }
+
+      .cls-3, .cls-4, .cls-5 {
+        stroke: #fff;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-3, .cls-5 {
+        fill: none;
+      }
+
+      .cls-4 {
+        fill: #4f563e;
+      }
+
+      .cls-4, .cls-5 {
+        stroke-width: 2px;
+      }
+
+      .cls-2 {
+        font-family: MicrosoftYaHei-Bold, 'Microsoft YaHei';
+        font-size: 19px;
+        font-weight: 700;
+        glyph-orientation-vertical: 0deg;
+        letter-spacing: .2em;
+        text-orientation: upright;
+        writing-mode: tb;
+      }
+    </style>
+  </defs>
+  <g id="_图层_1-2" data-name="图层 1">
+    <circle class="cls-1" cx="18.51" cy="8.03" r="8.03"/>
+    <line class="cls-5" x1="18.51" y1="8.03" x2="18.51" y2="121.86"/>
+    <g>
+      <g>
+        <rect class="cls-4" x="1" y="119.03" width="36" height="116.76" rx="8.27" ry="8.27"/>
+        <rect class="cls-3" x="4.71" y="122.68" width="28.58" height="110.22" rx="6.08" ry="6.08"/>
+      </g>
+      <text class="cls-2" transform="translate(19 156.51)"><tspan x="0" y="0">秦岭</tspan></text>
+    </g>
+  </g>
+</svg>

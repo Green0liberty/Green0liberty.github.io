@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>四川盆地区位分析</title>
+    <link rel="stylesheet" href="style.css" >
+    <link rel="stylesheet" href="nature_float_box.css" >
+    <link rel="stylesheet" href="nature_btn.css" >
+    <link rel="stylesheet" href="nature_note.css">
+</head>
+<body>
+<div class="text-btn-group">
+    <button class="nature_icon-btn">
+    <svg viewBox="0 0 24 24">
+        <path d="M8 5v14l11-7z"></path>
+    </svg>
+</button>
+    <div class="nature-text">
+        自然条件
+    </div>
+    <div class="nature_float-box">
+        <h3 class="note-item">·气候条件优越</h3><br>
+        属亚热带季风气候，夏季高温多雨、雨热同期，水热组合良好；北部秦岭、大巴山阻挡北方冬季冷空气入侵，冬季气温较同纬度东部地区偏高，无霜期长，作物可一年两熟或两年三熟；盆地地形闭塞，多云雾、空气湿度大。<br>
+        <h3 class="note-item">·地形与耕地条件良好</h3><br>
+        盆地底部以平原、丘陵为主，成都平原地势平坦开阔，土层深厚，利于大规模耕作与水利建设；边缘低山丘陵坡度和缓，可开垦为梯田，耕地类型多样、利用率高。<br>
+        <h3 class="note-item">·土壤肥力突出</h3><br>
+        广泛分布紫色土，由紫色砂页岩风化形成，富含磷、钾等矿物养分，土壤肥沃；成都平原为河流冲积平原，沉积土层深厚，土质疏松，保水保肥能力强，是西南地区核心高产农区。<br>
+        <h3 class="note-item">·水源充足且灌溉便利</h3><br>
+        长江干流及岷江、沱江、嘉陵江等支流密布，河网稠密，地表水资源丰富；都江堰等古代水利工程延续至今，配套现代灌溉设施完善，有效抵御旱涝灾害，保障农业稳产。
+    </div>
+</div>
+    <div class="nature-note-container">
+        <div class="note-item"></div>
+        <div class="note-item"></div>
+        <div class="note-item"></div>
+        <div class="note-item"></div>
+        <div class="note-item"></div>
+    </div>
+<div class="temp-chart-container">
+    <!-- 标签页切换栏 -->
+    <div class="chart-tabs">
+        <button class="tab-btn active" data-target="temperatureChart">气温趋势</button>
+        <button class="tab-btn" data-target="precipitationChart">降水量</button>
+    </div>
+    <h2 class="chart-title">重庆市气象数据</h2>
+    <!-- 图表容器（双图表切换） -->
+    <div class="chart-wrapper">
+        <canvas id="temperatureChart" class="chart-canvas"></canvas>
+        <canvas id="precipitationChart" class="chart-canvas" style="display:none;"></canvas>
+    </div>
+</div>
+<img src="SVG/秦岭.svg" class="Qingling-note" alt="秦岭">
+<img src="SVG/大巴山.svg" class="Daba-note" alt="大巴山">
+<img src="SVG/冷空气.svg" class="Cold" alt="冷空气">
+<img src="SVG/冷空气图例.svg" class="Cold-note" alt="冷空气图例">
+<img src="SVG/重庆.svg" class="Chongqing" alt="重庆">
+<img src="SVG/城市图例.svg" class="City-note" alt="城市图例">
+<img src="SVG/山脉图例.svg" class="Moun-note" alt="山脉图例">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
