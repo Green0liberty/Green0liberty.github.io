@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_图层_2" data-name="图层 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200.04 26.6">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #1e2973;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        font-family: MicrosoftYaHei-Bold, 'Microsoft YaHei';
+        font-size: 18px;
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+  <g id="_图层_1-2" data-name="图层 1">
+    <polygon class="cls-1" points=".8 7.97 0 16.23 56.68 15.43 48.97 26.6 84.09 13.3 47.15 0 56.95 9.36 .8 7.97"/>
+    <text class="cls-2" transform="translate(110.04 19.49)"><tspan x="0" y="0">冷气流方向</tspan></text>
+  </g>
+</svg>
